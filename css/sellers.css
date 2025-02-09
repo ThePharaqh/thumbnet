@@ -1,0 +1,13 @@
+.sellers {
+    position: static;
+    bottom: 0;
+ 
+}
+
+.sellers .title {
+    font-family: "Tinos", serif;
+    text-align: center;
+    position: relative;
+    font-size: 4vw;
+
+}

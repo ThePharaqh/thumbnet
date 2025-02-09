@@ -1,0 +1,104 @@
+/* The Modal Base */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Box Styles */
+.logbox, .regbox {
+    background-color: #FFFFFF;
+    width: 420px;
+    position: relative;
+    padding: 40px 36px;
+    padding-bottom: 56px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin: auto;
+    border-radius: 5px;
+    border: 1px solid #777;
+    bottom: 10%;
+    animation: animatezoom 0.2s;
+    color:#000;
+}
+
+.regbox {
+    bottom: 5%
+}
+
+/* Titles */
+.logtitle, .regtitle {
+    text-align: left;
+    color: black;
+    font-size: 28px;
+    padding-bottom: 36px;
+}
+
+/* Form Elements */
+input[type=email], input[type=text], input[type=password] {
+    width: 100%;
+    padding: 10px 12px;
+    margin: 2px 0;
+    margin-bottom: 20px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    background-color: white;
+    color: black;
+    box-sizing: border-box;
+    font-size: 1rem;
+    border-radius: 5px;
+}
+
+#registerUsername {
+    margin-bottom: 5px;
+}
+
+#usernameTakenStatus {
+    color: #E85F5C;
+    display:"none"
+}
+
+/* Buttons */
+.submit-button {
+    background-color: #04AA6D;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    margin-top: 36px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    transition: 0.3s ease
+}
+
+.submit-button:hover {
+    opacity: 0.8;
+}
+
+/* Animation */
+@keyframes animatezoom {
+    from {transform: scale(0)}
+    to {transform: scale(1)}
+}
+
+/* Responsive Design */
+@media screen and (max-width: 300px) {
+    span.psw {
+        display: block;
+        float: none;
+    }
+    .cancelbtn {
+        width: 100%;
+    }
+}
+
+/* Registration Steps */
+#reg1, #reg2 {
+    display: "none";
+}

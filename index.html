@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ThumbNet</title>
+
+    <!-- Bootstrap -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="./css/auth.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/navbar.css">
+    <link rel="stylesheet" href="./css/sellers.css">
+
+    <link rel="icon" type="image/svg+xml" href="./images/trianglefull.svg">
+    <!-- lora font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Sora&display=swap" rel="stylesheet">
+    <!-- tinos font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <nav class="navbar">
+        <a href="index.html" class="navbar-brand">
+            <img class="icon" src="./images/trianglefull.svg" alt="Thumbnet Logo">Thumbnet
+        </a>
+
+        <!-- Button to open the modal login form -->
+        <button class="login-button" id="login-button" onclick="document.getElementById('login').style.display='flex'">Login</button>
+
+        <!-- Profile Dropdown -->
+        <div id="profile-container">
+            <div class="profile-dropdown">
+                <a class="dropdown-btn" role="button" id="dropdown-button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span id="username-text"><!-- User username --></span>
+                    <img id="profile-pic" class="profile-picture" src="./images/default-profile.png" alt="Profile Picture">
+
+                </a>
+
+                <div id="dropdown-content" class="dropdown-menu" aria-labelledby="dropdown-button">
+                    <a class="dropdown-item" href="profile.html" id="profile-btn">My Profile</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#" id="logout-btn">Logout</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section id="sellers" class="sellers">
+            <!-- <h2 class="title">Top Sellers</h2> -->
+            <div class="freelancer-list" id="freelancer">
+                <!-- Freelancer cards will go here -->
+            </div>
+        </section>
+    </main>
+        <!-- Login Modal -->
+        <div id="login" class="modal">
+            <div class="logbox">
+                <h1 class="logtitle">Welcome back!</h1>
+                <form id="login-form" class="auth-form">
+                    <div class="form-group">
+                        <input type="text" 
+                            id="loginUsername" 
+                            name="username" 
+                            autocomplete="username" 
+                            placeholder="Username" 
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" 
+                            id="loginPassword" 
+                            name="password" 
+                            autocomplete="current-password" 
+                            placeholder="Password" 
+                            required>
+                    </div>
+                    <button class="submit-button" type="submit">Login</button>
+                </form>
+                <p class="auth-switch">
+                    Don't have an account? 
+                    <button class="registerButton" id="registerButton"
+                        onclick="document.getElementById('login').style.display='none';
+                                 document.getElementById('register').style.display='flex';
+                                 document.getElementById('reg1').style.display='block';
+                                 document.getElementById('reg2').style.display='none'">
+                        Register now!
+                    </button>
+                </p>
+            </div>
+        </div>
+
+        <!-- Register Modal -->
+        <div id="register" class="modal">
+            <div class="regbox">
+                <h1 class="regtitle">Register</h1>
+                <form id="register-form" class="auth-form">
+                    <!-- Step 1 -->
+                    <div class="form-step-1" id="reg1">
+                        <div class="form-group">
+                            <label for="registerName">Name</label>
+                            <input type="text" 
+                                id="registerName" 
+                                name="name" 
+                                autocomplete="name"
+                                placeholder="John Doe" 
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label for="registerEmail">Email</label>
+                            <input type="email" 
+                                id="registerEmail" 
+                                name="email" 
+                                autocomplete="email" 
+                                placeholder="example@domain.com" 
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label for="registerUsername">Username</label>
+                            <input type="text" 
+                                id="registerUsername" 
+                                name="username" 
+                                placeholder="Enter Username" 
+                                autocomplete="username" 
+                                required>
+                            <div id="usernameTakenStatus">
+                                <p3>Username unavailable</p3>
+                            </div>
+                        </div>
+                        <button class="next-button"
+                                type="button"
+                                id="nextButton">
+                                Next</button>
+                    </div>
+                    
+                    <!-- Step 2 -->
+                    <div class="form-step-2" id="reg2">
+                        <div class="form-group">
+                            <label for="registerPassword">Password</label>
+                            <input type="password" 
+                                id="registerPassword" 
+                                name="password" 
+                                placeholder="Enter Password" 
+                                autocomplete="new-password" 
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label for="registerConfirmPassword">Confirm Password</label>
+                            <input type="password" 
+                                id="registerConfirmPassword" 
+                                name="confirmPassword" 
+                                placeholder="Confirm Password" 
+                                autocomplete="off" 
+                                required>
+                        </div>
+                        <button class="submit-button"
+                                type="submit">
+                                Register
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+</body>
+    <footer>
+        <p>© 2024 Thumbnet Inc. | All Rights Reserved</p>
+    </footer>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script src="./js/freeLancerList.js"></script>
+    <script src="./js/profileutils.js"></script>
+    <script src="./js/update.js"></script>
+    <script src="./js/login.js"></script>
+    <script src="./js/register.js"></script>
+</body>
+</html>
